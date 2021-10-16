@@ -2,7 +2,7 @@
 
 #include "Defs.h"
 #include "Log.h"
-
+//test
 // NOTE: SDL redefines main function
 #include "SDL/include/SDL.h"
 

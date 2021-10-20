@@ -2,7 +2,7 @@
 
 #include "Defs.h"
 #include "Log.h"
-//test
+
 // NOTE: SDL redefines main function
 #include "SDL/include/SDL.h"
 
@@ -36,7 +36,6 @@ int main(int argc, char* args[])
 	{
 		switch(state)
 		{
-
 			// Allocate the engine --------------------------------------------
 			case CREATE:
 			LOG("CREATION PHASE ===============================");

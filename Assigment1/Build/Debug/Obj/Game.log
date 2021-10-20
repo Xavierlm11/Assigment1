@@ -1,0 +1,13 @@
+﻿  Main.cpp
+  App.cpp
+  Audio.cpp
+  Input.cpp
+  Map.cpp
+  Scene.cpp
+  Render.cpp
+  Textures.cpp
+  Window.cpp
+  Log.cpp
+  pugixml.cpp
+  Generating Code...
+  Game.vcxproj -> C:\Users\marinaav\Documents\GitHub\Assigment1\Assigment1\Build\Debug\Game.exe

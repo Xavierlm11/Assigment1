@@ -1,13 +1,2 @@
-﻿  LINK : C:\Users\marinaav\Documents\GitHub\Assigment1\Assigment1\Build\Debug\Game.exe not found or not built by the last incremental link; performing full link
-pugixml.obj : warning LNK4099: PDB 'vc142.pdb' was not found with 'pugixml.obj' or at 'C:\Users\marinaav\Documents\GitHub\Assigment1\Assigment1\Build\Debug\vc142.pdb'; linking object as if no debug info
-Log.obj : warning LNK4099: PDB 'vc142.pdb' was not found with 'Log.obj' or at 'C:\Users\marinaav\Documents\GitHub\Assigment1\Assigment1\Build\Debug\vc142.pdb'; linking object as if no debug info
-Window.obj : warning LNK4099: PDB 'vc142.pdb' was not found with 'Window.obj' or at 'C:\Users\marinaav\Documents\GitHub\Assigment1\Assigment1\Build\Debug\vc142.pdb'; linking object as if no debug info
-Textures.obj : warning LNK4099: PDB 'vc142.pdb' was not found with 'Textures.obj' or at 'C:\Users\marinaav\Documents\GitHub\Assigment1\Assigment1\Build\Debug\vc142.pdb'; linking object as if no debug info
-Render.obj : warning LNK4099: PDB 'vc142.pdb' was not found with 'Render.obj' or at 'C:\Users\marinaav\Documents\GitHub\Assigment1\Assigment1\Build\Debug\vc142.pdb'; linking object as if no debug info
-Scene.obj : warning LNK4099: PDB 'vc142.pdb' was not found with 'Scene.obj' or at 'C:\Users\marinaav\Documents\GitHub\Assigment1\Assigment1\Build\Debug\vc142.pdb'; linking object as if no debug info
-Map.obj : warning LNK4099: PDB 'vc142.pdb' was not found with 'Map.obj' or at 'C:\Users\marinaav\Documents\GitHub\Assigment1\Assigment1\Build\Debug\vc142.pdb'; linking object as if no debug info
-Input.obj : warning LNK4099: PDB 'vc142.pdb' was not found with 'Input.obj' or at 'C:\Users\marinaav\Documents\GitHub\Assigment1\Assigment1\Build\Debug\vc142.pdb'; linking object as if no debug info
-Audio.obj : warning LNK4099: PDB 'vc142.pdb' was not found with 'Audio.obj' or at 'C:\Users\marinaav\Documents\GitHub\Assigment1\Assigment1\Build\Debug\vc142.pdb'; linking object as if no debug info
-App.obj : warning LNK4099: PDB 'vc142.pdb' was not found with 'App.obj' or at 'C:\Users\marinaav\Documents\GitHub\Assigment1\Assigment1\Build\Debug\vc142.pdb'; linking object as if no debug info
-Main.obj : warning LNK4099: PDB 'vc142.pdb' was not found with 'Main.obj' or at 'C:\Users\marinaav\Documents\GitHub\Assigment1\Assigment1\Build\Debug\vc142.pdb'; linking object as if no debug info
-  Game.vcxproj -> C:\Users\marinaav\Documents\GitHub\Assigment1\Assigment1\Build\Debug\Game.exe
+﻿  Scene.cpp
+  Game.vcxproj -> C:\Users\marin\Documents\GitHub\Assigment1\Assigment1\Build\Debug\Game.exe

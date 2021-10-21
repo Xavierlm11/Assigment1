@@ -36,7 +36,7 @@ bool Scene::Start()
 	app->map->Load("level1.tmx");
 	
 	// Load music
-	app->audio->PlayMusic("Assets/audio/music/music_spy.ogg");
+	app->audio->PlayMusic("Assets/audio/music/BackgroundMusic.ogg");
 
 	return true;
 }

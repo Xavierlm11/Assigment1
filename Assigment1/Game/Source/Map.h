@@ -44,6 +44,8 @@ struct Properties
 	struct Property
 	{
 		//...
+		SString name;
+		int value;
 	};
 	
 	~Properties()

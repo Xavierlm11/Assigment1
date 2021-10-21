@@ -21,7 +21,16 @@ Map::~Map()
 // L06: TODO 7: Ask for the value of a custom property
 int Properties::GetProperty(const char* value, int defaultValue) const
 {
-	//...
+		//...
+
+	ListItem<Property*>* item = list.start;
+
+	while (item)
+	{
+		if (item->data->name == value)
+			return item->data->value;
+		item = item->next;
+	}
 
 	return defaultValue;
 }
@@ -111,6 +120,17 @@ TileSet* Map::GetTilesetFromTileId(int id) const
 	TileSet* set = item->data;
 
 	//..
+
+	while (item)
+	{
+		if (id < item->data->firstgid)
+		{
+			set = item->prev->data;
+			break;
+		}
+		set = item->data;
+		item = item->next;
+	}
 
 	return set;
 }
@@ -358,7 +378,7 @@ bool Map::LoadLayer(pugi::xml_node& node, MapLayer* layer)
 	layer->height = node.attribute("height").as_int();
 
 	//L06: TODO 6 Call Load Properties
-	//..
+	LoadProperties(node, layer->properties);
 
 	//Reserve the memory for the tile array
 	layer->data = new uint[layer->width * layer->height];
@@ -397,5 +417,14 @@ bool Map::LoadProperties(pugi::xml_node& node, Properties& properties)
 {
 	bool ret = false;
 	
+	for (pugi::xml_node propertieNode = node.child("properties").child("property"); propertieNode; propertieNode = propertieNode.next_sibling("property"))
+	{
+		Properties::Property* p = new Properties::Property();
+		p->name = propertieNode.attribute("name").as_string();
+		p->value = propertieNode.attribute("value").as_int();
+
+		properties.list.add(p);
+	}
+
 	return ret;
 }

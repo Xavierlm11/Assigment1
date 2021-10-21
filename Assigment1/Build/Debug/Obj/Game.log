@@ -1,11 +1,12 @@
-﻿  App.cpp
-  Audio.cpp
-  Input.cpp
-  Main.cpp
-  Map.cpp
-  Render.cpp
+﻿  Main.cpp
   Scene.cpp
-  Textures.cpp
-  Window.cpp
   Generando código...
+  LINK : no se encontró C:\Users\marin\Documents\GitHub\Assigment1\Assigment1\Build\Debug\Game.exe o no lo generó el último vínculo incremental; ejecutando vínculo completo
+Window.obj : warning LNK4099: no se encontró PDB 'vc142.pdb' con 'Window.obj' o en 'C:\Users\marin\Documents\GitHub\Assigment1\Assigment1\Build\Debug\vc142.pdb'; se vinculará el objeto sin tener en cuenta información de depuración
+Textures.obj : warning LNK4099: no se encontró PDB 'vc142.pdb' con 'Textures.obj' o en 'C:\Users\marin\Documents\GitHub\Assigment1\Assigment1\Build\Debug\vc142.pdb'; se vinculará el objeto sin tener en cuenta información de depuración
+Render.obj : warning LNK4099: no se encontró PDB 'vc142.pdb' con 'Render.obj' o en 'C:\Users\marin\Documents\GitHub\Assigment1\Assigment1\Build\Debug\vc142.pdb'; se vinculará el objeto sin tener en cuenta información de depuración
+Map.obj : warning LNK4099: no se encontró PDB 'vc142.pdb' con 'Map.obj' o en 'C:\Users\marin\Documents\GitHub\Assigment1\Assigment1\Build\Debug\vc142.pdb'; se vinculará el objeto sin tener en cuenta información de depuración
+Input.obj : warning LNK4099: no se encontró PDB 'vc142.pdb' con 'Input.obj' o en 'C:\Users\marin\Documents\GitHub\Assigment1\Assigment1\Build\Debug\vc142.pdb'; se vinculará el objeto sin tener en cuenta información de depuración
+Audio.obj : warning LNK4099: no se encontró PDB 'vc142.pdb' con 'Audio.obj' o en 'C:\Users\marin\Documents\GitHub\Assigment1\Assigment1\Build\Debug\vc142.pdb'; se vinculará el objeto sin tener en cuenta información de depuración
+App.obj : warning LNK4099: no se encontró PDB 'vc142.pdb' con 'App.obj' o en 'C:\Users\marin\Documents\GitHub\Assigment1\Assigment1\Build\Debug\vc142.pdb'; se vinculará el objeto sin tener en cuenta información de depuración
   Game.vcxproj -> C:\Users\marin\Documents\GitHub\Assigment1\Assigment1\Build\Debug\Game.exe

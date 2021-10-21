@@ -293,12 +293,25 @@ void App::SaveGameRequest() const
 // then call all the modules to load themselves
 bool App::LoadGame()
 {
-	bool ret = false;
+	bool ret = true;
+	pugi::xml_document gameStateFile;
+	pugi::xml_parse_result result = gameStateFile.load_file("save_game.xml");
 
-	//...
-
-	loadGameRequested = false;
-
+	if (result == NULL)
+	{
+		LOG("could not Load xml file savegame.xml. pugi error: %s", result.description());
+		ret = false;
+	}
+	else
+	{
+		ListItem<Module*>* item;
+		item = modules.start;
+		while (item != NULL && ret == true)
+		{
+			ret = item->data->LoadState(gameStateFile.child("save_state").child(item->data->name.GetString()));
+			item = item->next;
+		}
+	}
 	return ret;
 }
 
@@ -306,8 +319,17 @@ bool App::LoadGame()
 bool App::SaveGame() const
 {
 	bool ret = true;
+	pugi::xml_document gameStateFile;
+	pugi::xml_parse_result result = gameStateFile.load_file("save_game.xml");
 
-	//...
+	if (result == NULL)
+	{
+		LOG("could not Load xml file savegame.xml. pugi error: %s", result.description());
+		ret = false;
+	}
+	else {
+
+	}
 
 	saveGameRequested = false;
 

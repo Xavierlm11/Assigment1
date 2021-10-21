@@ -1,2 +1,11 @@
-﻿  Scene.cpp
+﻿  App.cpp
+  Audio.cpp
+  Input.cpp
+  Main.cpp
+  Map.cpp
+  Render.cpp
+  Scene.cpp
+  Textures.cpp
+  Window.cpp
+  Generando código...
   Game.vcxproj -> C:\Users\marin\Documents\GitHub\Assigment1\Assigment1\Build\Debug\Game.exe

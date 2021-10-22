@@ -30,7 +30,7 @@ Player::Player() : Module()
 	walkAnimR.PushBack({ 342,11,20,18 });
 	walkAnimR.PushBack({ 361,11,20,18 });
 	walkAnimR.loop = true;
-	walkAnimR.speed = 0.052f;
+	walkAnimR.speed = 0.1f;
 
 }
 
@@ -79,7 +79,7 @@ bool Player::PreUpdate()
 bool Player::Update(float dt) {
 	bool ret = true;
 	//right
-	float speed = 0.21f;
+	int speed = 2;
 	if (app->input->GetKey(SDL_SCANCODE_D) == KEY_REPEAT)
 	{
 		position.x += speed;

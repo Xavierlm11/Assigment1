@@ -32,6 +32,17 @@ Player::Player() : Module()
 	walkAnimR.loop = true;
 	walkAnimR.speed = 0.1f;
 
+	walkAnimL.PushBack({ 254,11,20,18 });
+	walkAnimL.PushBack({ 276,10,20,18 });
+	walkAnimL.PushBack({ 299,11,20,18 });
+	walkAnimL.PushBack({ 321,11,20,18 });
+	walkAnimL.PushBack({ 342,11,20,18 });
+	walkAnimL.PushBack({ 361,11,20,18 });
+	walkAnimL.loop = true;
+	walkAnimL.speed = 0.1f;
+
+
+
 }
 
 // Destructor

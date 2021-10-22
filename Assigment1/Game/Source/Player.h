@@ -47,6 +47,8 @@ public:
 	List<SDL_Texture*> player;
 
 private:
+	bool PlayerPosition = true;
+
 	SDL_Texture* texture = nullptr;
 
 	Animation* currentAnimation = nullptr;

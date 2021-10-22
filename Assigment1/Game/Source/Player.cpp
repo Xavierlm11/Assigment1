@@ -20,8 +20,22 @@ Player::Player() : Module()
 	name.Create("player");
 
 	idleAnimR.PushBack({8,11,21,19});
-	idleAnimR.loop = false;
-	idleAnimR.speed = 0.1f;
+	idleAnimR.PushBack({ 8,11,21,19 });
+	idleAnimR.PushBack({ 8,11,21,19 });
+	idleAnimR.PushBack({ 8,11,21,19 });
+	idleAnimR.PushBack({405,72,20,18});
+	idleAnimR.PushBack({ 405,72,20,18 });
+	idleAnimR.loop = true;
+	idleAnimR.speed = 0.069f;
+
+	idleAnimL.PushBack({ 944,338,20,18 });
+	idleAnimL.PushBack({ 944,338,20,18 });
+	idleAnimL.PushBack({ 944,338,20,18 });
+	idleAnimL.PushBack({ 944,338,20,18 });
+	idleAnimL.PushBack({ 971,338,20,18 });
+	idleAnimL.PushBack({ 971,338,20,18 });
+	idleAnimL.loop = true;
+	idleAnimL.speed = 0.069f;
 
 	walkAnimR.PushBack({ 254,11,20,18 });
 	walkAnimR.PushBack({ 276,10,20,18 });
@@ -32,17 +46,21 @@ Player::Player() : Module()
 	walkAnimR.loop = true;
 	walkAnimR.speed = 0.1f;
 
-	walkAnimL.PushBack({ 254,11,20,18 });
-	walkAnimL.PushBack({ 276,10,20,18 });
-	walkAnimL.PushBack({ 299,11,20,18 });
-	walkAnimL.PushBack({ 321,11,20,18 });
-	walkAnimL.PushBack({ 342,11,20,18 });
-	walkAnimL.PushBack({ 361,11,20,18 });
+	walkAnimL.PushBack({ 971,313,20,18 });
+	walkAnimL.PushBack({ 948,312,21,19 });
+	walkAnimL.PushBack({ 926,313,20,18 });
+	walkAnimL.PushBack({ 905,315,20,18 });
+	walkAnimL.PushBack({ 886,314,20,18 });
+	walkAnimL.PushBack({ 867,313,20,18 });
 	walkAnimL.loop = true;
 	walkAnimL.speed = 0.1f;
 
-
-
+	jumpAnimR.PushBack({ 107,7,20,22 });
+	jumpAnimR.PushBack({ 130,14,24,15 });
+	jumpAnimR.PushBack({ 156,8,20,21 });
+	jumpAnimR.PushBack({ 8,11,21,19 });
+	jumpAnimR.loop = false;
+	jumpAnimR.speed = 0.080f;
 }
 
 // Destructor
@@ -78,6 +96,7 @@ bool Player::Start()
 	currentAnimation = &idleAnimR;
 	app->player->position.x = 50;
 	app->player->position.y = 20;
+	PlayerPosition = true;
 
 	return ret;
 }
@@ -98,12 +117,43 @@ bool Player::Update(float dt) {
 		{
 			walkAnimR.Reset();
 			currentAnimation = &walkAnimR;
-			/*Player_Position = true;*/
+			PlayerPosition = true;
 		}
 	}
 
-	if (app->input->GetKey(SDL_SCANCODE_D) == KEY_IDLE && currentAnimation != &walkAnimR) {
-		currentAnimation = &idleAnimR;
+	if (app->input->GetKey(SDL_SCANCODE_A) == KEY_REPEAT)
+	{
+		position.x -= speed;
+		if (currentAnimation != &walkAnimL)
+		{
+			walkAnimL.Reset();
+			currentAnimation = &walkAnimL;
+			PlayerPosition = false;
+		}
+	}
+
+	if (app->input->GetKey(SDL_SCANCODE_SPACE) == KEY_DOWN)
+	{
+		/*position.y += speed;*/
+		if (currentAnimation != &jumpAnimR)
+		{
+			jumpAnimR.Reset();
+			currentAnimation = &jumpAnimR;
+			PlayerPosition = true;
+		}
+	}
+
+	if (app->input->GetKey(SDL_SCANCODE_D) == KEY_IDLE && app->input->GetKey(SDL_SCANCODE_A) == KEY_IDLE && app->input->GetKey(SDL_SCANCODE_SPACE) == KEY_IDLE) {
+		if (currentAnimation != &idleAnimR && currentAnimation != &idleAnimL && currentAnimation != &jumpAnimR) {
+			if (PlayerPosition == true) {
+				idleAnimR.Reset();
+				currentAnimation = &idleAnimR;
+			}
+			if (PlayerPosition == false) {
+				idleAnimL.Reset();
+				currentAnimation = &idleAnimL;
+			}
+		}
 	}
 
 	currentAnimation->Update();

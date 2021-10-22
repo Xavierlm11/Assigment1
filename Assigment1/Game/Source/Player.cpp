@@ -1,6 +1,7 @@
 #include "App.h"
 #include "Render.h"
 #include "Textures.h"
+#include "Input.h"
 #include "Player.h"
 #include "Animation.h"
 #include <stdio.h>
@@ -19,9 +20,18 @@ Player::Player() : Module()
 	name.Create("player");
 
 	idleAnimR.PushBack({8,11,21,19});
-	idleAnimR.PushBack({ 21,11,21,19 });
-	idleAnimR.loop = true;
+	idleAnimR.loop = false;
 	idleAnimR.speed = 0.1f;
+
+	walkAnimR.PushBack({ 254,11,20,18 });
+	walkAnimR.PushBack({ 276,10,20,18 });
+	walkAnimR.PushBack({ 299,11,20,18 });
+	walkAnimR.PushBack({ 321,11,20,18 });
+	walkAnimR.PushBack({ 342,11,20,18 });
+	walkAnimR.PushBack({ 361,11,20,18 });
+	walkAnimR.loop = true;
+	walkAnimR.speed = 0.052f;
+
 }
 
 // Destructor
@@ -55,8 +65,8 @@ bool Player::Start()
 	LOG("start Player");
 	bool ret = true;
 	currentAnimation = &idleAnimR;
-	app->player->position.x = 40;
-	app->player->position.y = 120;
+	app->player->position.x = 50;
+	app->player->position.y = 20;
 
 	return ret;
 }
@@ -68,6 +78,24 @@ bool Player::PreUpdate()
 
 bool Player::Update(float dt) {
 	bool ret = true;
+	//right
+	float speed = 0.21f;
+	if (app->input->GetKey(SDL_SCANCODE_D) == KEY_REPEAT)
+	{
+		position.x += speed;
+		if (currentAnimation != &walkAnimR)
+		{
+			walkAnimR.Reset();
+			currentAnimation = &walkAnimR;
+			/*Player_Position = true;*/
+		}
+	}
+
+	if (app->input->GetKey(SDL_SCANCODE_D) == KEY_IDLE && currentAnimation != &walkAnimR) {
+		currentAnimation = &idleAnimR;
+	}
+
+	currentAnimation->Update();
 	return ret;
 }
 

@@ -1,4 +1,9 @@
 ﻿  Player.cpp
 C:\Users\marin\Documents\GitHub\Assigment1\Assigment1\Game\Source\Animation.h(54,19): warning C4244: 'inicializando': conversión de 'float' a 'int'; posible pérdida de datos
 C:\Users\marin\Documents\GitHub\Assigment1\Assigment1\Game\Source\Animation.h(56,30): warning C4244: '=': conversión de 'float' a 'int'; posible pérdida de datos
+C:\Users\marin\Documents\GitHub\Assigment1\Assigment1\Game\Source\Player.cpp(85,22): warning C4244: '+=': conversión de 'float' a 'TYPE'; posible pérdida de datos
+          with
+          [
+              TYPE=int
+          ]
   Game.vcxproj -> C:\Users\marin\Documents\GitHub\Assigment1\Assigment1\Build\Debug\Game.exe

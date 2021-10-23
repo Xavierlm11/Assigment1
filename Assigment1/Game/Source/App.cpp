@@ -166,7 +166,10 @@ void App::PrepareUpdate()
 void App::FinishUpdate()
 {
 	// L02: DONE 1: This is a good place to call Load / Save methods
-	if (loadGameRequested == true) LoadGame();
+	if (loadGameRequested == true) {
+		LoadGame();
+		loadGameRequested == false;
+	}
 	if (saveGameRequested == true) SaveGame();
 }
 
@@ -312,10 +315,12 @@ bool App::LoadGame()
 		item = modules.start;
 		while (item != NULL && ret == true)
 		{
-			ret = item->data->LoadState(gameStateFile.child("save_state").child(item->data->name.GetString()));
+			item->data->LoadState(gameStateFile.child("game_state").child(item->data->name.GetString()));
 			item = item->next;
+			LOG("could Load xml file savegame.xml. pugi error: aaaaaaaaaaaaA");
 		}
 	}
+	loadGameRequested = false;
 	return ret;
 }
 
@@ -323,8 +328,8 @@ bool App::LoadGame()
 bool App::SaveGame() const
 {
 	bool ret = true;
-	pugi::xml_document gameStateFile;
-	pugi::xml_parse_result result = gameStateFile.load_file("save_game.xml");
+	/*pugi::xml_document gameStateFile;
+	pugi::xml_parse_result result = gameStateFile.save_file("save_game.xml");
 
 	if (result == NULL)
 	{
@@ -332,10 +337,19 @@ bool App::SaveGame() const
 		ret = false;
 	}
 	else {
+		ListItem<Module*>* item;
+		item = modules.end;
+		while (item != NULL && ret == true)
+		{
+			item->data->SaveState(gameStateFile.child("game_state").child(item->data->name.GetString()));
+			item = item->next;
+			LOG("could Load xml file savegame.xml. pugi error: bbbbbbbbbbbbbbbbbbbbbbbA");
+			saveGameRequested = false;
+		}
 
-	}
+	}*/
 
-	saveGameRequested = false;
+	
 
 	return ret;
 }

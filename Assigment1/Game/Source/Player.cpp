@@ -75,14 +75,6 @@ bool Player::Awake(pugi::xml_node& config)
 	
 	// Load support for the PNG image format
 	
-	int flags = IMG_INIT_PNG;
-	int init = IMG_Init(flags);
-
-	if ((init & flags) != flags)
-	{
-		LOG("Could not initialize Image lib. IMG_Init: %s", IMG_GetError());
-		ret = false;
-	}
 
 	return ret;
 }
@@ -185,4 +177,22 @@ bool Player::CleanUp()
 	return true;
 }
 
+bool Player::LoadState(pugi::xml_node& data)
+{
+	position.x = data.child("position").attribute("x").as_int();
+	position.y = data.child("position").attribute("y").as_int();
 
+	return true;
+}
+
+// L02: DONE 8: Create a method to save the state of the renderer
+// Save Game State
+bool Player::SaveState(pugi::xml_node& data) const
+{
+	pugi::xml_node pos = data.append_child("position");
+
+	pos.append_attribute("x") = position.x;
+	pos.append_attribute("y") = position.y;
+
+	return true;
+}

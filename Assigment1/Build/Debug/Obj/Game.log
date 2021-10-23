@@ -1,4 +1,5 @@
-﻿  Player.cpp
+﻿  App.cpp
 C:\Users\marin\Documents\GitHub\Assigment1\Assigment1\Game\Source\Animation.h(54,19): warning C4244: 'inicializando': conversión de 'float' a 'int'; posible pérdida de datos
 C:\Users\marin\Documents\GitHub\Assigment1\Assigment1\Game\Source\Animation.h(56,30): warning C4244: '=': conversión de 'float' a 'int'; posible pérdida de datos
+C:\Users\marin\Documents\GitHub\Assigment1\Assigment1\Game\Source\App.cpp(171,21): warning C4553: "==": el resultado de la expresión no se usa. ¿Quiso decir "="?
   Game.vcxproj -> C:\Users\marin\Documents\GitHub\Assigment1\Assigment1\Build\Debug\Game.exe

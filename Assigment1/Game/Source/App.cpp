@@ -8,6 +8,8 @@
 #include "Map.h"
 #include "Player.h"
 #include "Animation.h"
+#include "ModuleFadeToBlack.h"
+#include "SceneIntro.h"
 
 #include "Defs.h"
 #include "Log.h"
@@ -28,17 +30,20 @@ App::App(int argc, char* args[]) : argc(argc), args(args)
 	scene = new Scene();
 	map = new Map();
 	player = new Player();
-		
+	fade = new ModuleFadeToBlack();
+	intro = new SceneIntro();
 	// Ordered for awake / Start / Update
 	// Reverse order of CleanUp
 	AddModule(win);
 	AddModule(input);
 	AddModule(tex);
 	AddModule(audio);
+	AddModule(intro);
 	AddModule(scene);
 	AddModule(map);
 	AddModule(player);
-
+	AddModule(fade);
+	
 	// Render last to swap buffer
 	AddModule(render);
 }

@@ -1,6 +1,4 @@
-﻿  App.cpp
-C:\Users\marin\Documents\GitHub\Assigment1\Assigment1\Game\Source\Animation.h(54,19): warning C4244: 'inicializando': conversión de 'float' a 'int'; posible pérdida de datos
-C:\Users\marin\Documents\GitHub\Assigment1\Assigment1\Game\Source\Animation.h(56,30): warning C4244: '=': conversión de 'float' a 'int'; posible pérdida de datos
-C:\Users\marin\Documents\GitHub\Assigment1\Assigment1\Game\Source\App.cpp(171,21): warning C4553: "==": el resultado de la expresión no se usa. ¿Quiso decir "="?
-  LINK : no se encontró C:\Users\marin\Documents\GitHub\Assigment1\Assigment1\Build\Debug\Game.exe o no lo generó el último vínculo incremental; ejecutando vínculo completo
-  Game.vcxproj -> C:\Users\marin\Documents\GitHub\Assigment1\Assigment1\Build\Debug\Game.exe
+﻿  SceneIntro.cpp
+D:\y\UNIS\2o\1sem\desarrollo\Assigment1\Assigment1\Game\Source\Animation.h(54,19): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+D:\y\UNIS\2o\1sem\desarrollo\Assigment1\Assigment1\Game\Source\Animation.h(56,30): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
+  Game.vcxproj -> D:\y\UNIS\2o\1sem\desarrollo\Assigment1\Assigment1\Build\Debug\Game.exe

@@ -18,6 +18,8 @@ class Audio;
 class Scene;
 class Map;
 class Player;
+class ModuleFadeToBlack;
+class SceneIntro;
 
 class App
 {
@@ -90,6 +92,8 @@ public:
 	Scene* scene;
 	Map* map;
 	Player* player;
+	ModuleFadeToBlack* fade;
+	SceneIntro* intro;
 
 private:
 

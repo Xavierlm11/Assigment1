@@ -67,11 +67,37 @@ public:
 		return true;
 	}
 
+	//void Module::OnCollision(Collider* c1, Collider* c2) {
+
+	//}
+	// to enable and disable modules
+	void Module::Enable()
+	{
+		if (!isEnabled)
+		{
+			isEnabled = true;
+			Start();
+		}
+	}
+
+	void Module::Disable()
+	{
+		if (isEnabled)
+		{
+			isEnabled = false;
+			CleanUp();
+		}
+	}
+
+	inline bool IsEnabled() const { return  isEnabled; }
+
 public:
 
 	SString name;
 	bool active;
 
+private:
+	bool isEnabled = true;
 };
 
 #endif // __MODULE_H__

@@ -61,6 +61,13 @@ Player::Player() : Module()
 	jumpAnimR.PushBack({ 8,11,21,19 });
 	jumpAnimR.loop = false;
 	jumpAnimR.speed = 0.080f;
+
+	jumpAnimL.PushBack({ 839,311,20,22 });
+	jumpAnimL.PushBack({ 812,318,24,15 });
+	jumpAnimL.PushBack({ 790,312,20,21 });
+	jumpAnimL.PushBack({ 944,338,20,18 });
+	jumpAnimL.loop = false;
+	jumpAnimL.speed = 0.080f;
 }
 
 // Destructor
@@ -127,16 +134,19 @@ bool Player::Update(float dt) {
 	if (app->input->GetKey(SDL_SCANCODE_SPACE) == KEY_DOWN)
 	{
 		/*position.y += speed;*/
-		if (currentAnimation != &jumpAnimR)
+		if (PlayerPosition == false) {
+			jumpAnimL.Reset();
+			currentAnimation = &jumpAnimL;
+		}
+		if (PlayerPosition == true)
 		{
 			jumpAnimR.Reset();
 			currentAnimation = &jumpAnimR;
-			PlayerPosition = true;
 		}
 	}
 
 	if (app->input->GetKey(SDL_SCANCODE_D) == KEY_IDLE && app->input->GetKey(SDL_SCANCODE_A) == KEY_IDLE && app->input->GetKey(SDL_SCANCODE_SPACE) == KEY_IDLE) {
-		if (currentAnimation != &idleAnimR && currentAnimation != &idleAnimL && currentAnimation != &jumpAnimR) {
+		if (currentAnimation != &idleAnimR && currentAnimation != &idleAnimL && currentAnimation != &jumpAnimR && currentAnimation != &jumpAnimL) {
 			if (PlayerPosition == true) {
 				idleAnimR.Reset();
 				currentAnimation = &idleAnimR;
@@ -146,6 +156,20 @@ bool Player::Update(float dt) {
 				currentAnimation = &idleAnimL;
 			}
 		}
+	}
+
+	if (position.x > 660)
+	{
+		position.x = 660;
+	}
+	//if (position.y > 800) { //bottom
+	//	position.y = 840;
+	//}
+	if (position.y < 20) {//top
+		position.y = 20;
+	}
+	if (position.x < 20) {
+		position.x = 20;
 	}
 
 	currentAnimation->Update();

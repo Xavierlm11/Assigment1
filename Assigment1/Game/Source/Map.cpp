@@ -68,7 +68,8 @@ void Map::Draw()
 
 					//L06: TODO 4: Obtain the tile set using GetTilesetFromTileId
 					//now we always use the firt tileset in the list
-					TileSet* tileset = mapData.tilesets.start->data;
+					//TileSet* tileset = mapData.tilesets.start->data;
+					TileSet* tileset = GetTilesetFromTileId(gid);
 
 					SDL_Rect r = tileset->GetTileRect(gid);
 					iPoint pos = MapToWorld(x, y);

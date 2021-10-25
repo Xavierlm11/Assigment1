@@ -5,7 +5,6 @@
 #include "Textures.h"
 #include "Audio.h"
 #include "Scene.h"
-#include "SceneLogo.h"
 #include "SceneIntro.h"
 #include "Map.h"
 #include "Player.h"
@@ -28,7 +27,6 @@ App::App(int argc, char* args[]) : argc(argc), args(args)
 	input = new Input(true);
 	tex = new Textures(true);
 	audio = new Audio(true);
-	logo = new SceneLogo(true);
 	intro = new SceneIntro(false);
 	scene = new Scene(false);
 	map = new Map(false);
@@ -42,7 +40,6 @@ App::App(int argc, char* args[]) : argc(argc), args(args)
 	AddModule(input);
 	AddModule(tex);
 	AddModule(audio);
-	AddModule(logo);
 	AddModule(intro);
 	AddModule(scene);
 	AddModule(map);

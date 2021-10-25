@@ -16,10 +16,26 @@
 
 SceneIntro::SceneIntro(bool startEnabled) : Module(startEnabled)
 {
-	PressEnter.PushBack({ 0,0,85,26 });
-	PressEnter.PushBack({ 0,0,1,1 });
-	PressEnter.loop = true;
-	PressEnter.speed = 0.1f;
+	intro.PushBack({0,0,240,168});
+	intro.PushBack({ 0,168,240,168 });
+	intro.PushBack({ 240,168,240,168 });
+	intro.PushBack({ 0,168,240,168 });
+	intro.PushBack({ 240,168,240,168 });
+	intro.PushBack({ 0,168,240,168 });
+	intro.PushBack({ 240,168,240,168 });
+	intro.PushBack({ 0,168,240,168 });
+	intro.PushBack({ 240,168,240,168 });
+	intro.PushBack({ 0,168,240,168 });
+	intro.PushBack({ 240,168,240,168 });
+	intro.PushBack({ 0,168,240,168 });
+	intro.PushBack({ 240,168,240,168 });
+	intro.PushBack({ 0,168,240,168 });
+	intro.PushBack({ 240,168,240,168 });
+	intro.PushBack({ 0,168,240,168 });
+	intro.PushBack({ 240,168,240,168 });
+	intro.PushBack({ 0,168,240,168 });
+	intro.loop = false;
+	intro.speed = 0.01f;
 
 }
 
@@ -32,8 +48,7 @@ bool SceneIntro::Start() {
 
 	bool ret = true;
     
-	bgTexture = app->tex->Load("Assets/textures/Menu.png");
-	PressEnterTex = app->tex->Load("Assets/textures/PressEnter.png");
+	bgTexture = app->tex->Load("Assets/textures/IntroMenu.png");
 
 	//app->audio->PlayMusic("assets/sound/music/intro.ogg", 1.0f);
 
@@ -45,11 +60,7 @@ bool SceneIntro::Start() {
 
 bool SceneIntro::Update(float dt) {	// plays Game logo + animation
 	bool ret = true;
-
-	PressEnter.Update();
-	intro.Update();
-
-
+	/*intro.Update();*/
 
 	/*if (intro.HasFinished())
 	{
@@ -59,11 +70,9 @@ bool SceneIntro::Update(float dt) {	// plays Game logo + animation
 
 
 	 if (app->input->GetKey(SDL_SCANCODE_2) == KEY_DOWN)
-	{
+	 {
 		 /*CleanUp();*/
 		app->fade->FadeToBlack((Module*)app->intro, (Module*)app->scene, 90);
-
-
 	 }
 	
 	return ret;
@@ -75,11 +84,7 @@ bool SceneIntro::PostUpdate() {
 	bool ret = true;
 
 
-	app->render->DrawTexture(PressEnterTex, 80 , 140, NULL);
-
-
-	app->render->DrawTexture(bgTexture, 0, 0); // intro
-
+	app->render->DrawTexture(bgTexture,0,0, &(intro.GetCurrentFrame()));
 
 	return ret;
 }

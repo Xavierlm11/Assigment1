@@ -1,5 +1,4 @@
 <?xml version="1.0"?>
-<!-- L02: TODO 4: Create a simulation xml file to read -->
 <game_state>
 	<input />
 	<window />
@@ -7,7 +6,7 @@
 	<audio />
 	<scene />
 	<renderer>
-		<camera x="-100" y="-50" />
+		<camera x="-272" y="-168" />
 	</renderer>
 	<player>
 		<position x="0" y="0" />

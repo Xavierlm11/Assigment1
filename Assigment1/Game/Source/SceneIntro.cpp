@@ -46,12 +46,12 @@ bool SceneIntro::Update(float dt) {	// plays Game logo + animation
 	{
 		app->fade->FadeToBlack(this, (Module*)app->titleScreen, 60);
 	}*/
-	app->render->DrawTexture(bgTexture, 0 , 0 ); // intro
+	
 
 	 if (app->input->GetKey(SDL_SCANCODE_2) == KEY_DOWN)
 	{
-		 CleanUp();
-		app->fade->FadeToBlack((Module*)app->intro, (Module*)app->scene, 60);
+		 /*CleanUp();*/
+		app->fade->FadeToBlack((Module*)app->intro, (Module*)app->scene, 90);
 
 	}
 	
@@ -63,11 +63,12 @@ bool SceneIntro::Update(float dt) {	// plays Game logo + animation
 bool SceneIntro::PostUpdate() {
 	bool ret = true;
 
-	if (app->input->GetKey(SDL_SCANCODE_1) == KEY_DOWN)
+	app->render->DrawTexture(bgTexture, 0, 0); // intro
+	/*if (app->input->GetKey(SDL_SCANCODE_1) == KEY_DOWN)
 		{
 		
 		
-		}
+		}*/
 
 	
 	return ret;

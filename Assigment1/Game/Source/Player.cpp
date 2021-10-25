@@ -213,10 +213,10 @@ bool Player::LoadState(pugi::xml_node& data)
 // Save Game State
 bool Player::SaveState(pugi::xml_node& data) const
 {
-	pugi::xml_node pos = data.append_child("position");
+	pugi::xml_node pla = data.child("position");
 
-	pos.append_attribute("x") = position.x;
-	pos.append_attribute("y") = position.y;
+	pla.attribute("x").set_value(position.x);
+	pla.attribute("y").set_value(position.y);
 
 	return true;
 }

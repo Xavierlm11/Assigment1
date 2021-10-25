@@ -14,7 +14,7 @@
 #include "Defs.h"
 #include "Log.h"
 
-SceneIntro::SceneIntro(/*bool startEnabled*/) :Module(/*startEnabled*/)
+SceneIntro::SceneIntro(bool startEnabled) : Module(startEnabled)
 {
 
 
@@ -41,15 +41,17 @@ bool SceneIntro::Start() {
 
 bool SceneIntro::Update(float dt) {	// plays Game logo + animation
 	bool ret = true;
-	intro.Update();
+	//intro.Update();
 	/*if (intro.HasFinished())
 	{
 		app->fade->FadeToBlack(this, (Module*)app->titleScreen, 60);
 	}*/
+	app->render->DrawTexture(bgTexture, 0 , 0 ); // intro
 
-	 if ((app->input->GetKey(SDL_SCANCODE_P) == KEY_REPEAT))
+	 if (app->input->GetKey(SDL_SCANCODE_2) == KEY_DOWN)
 	{
-		app->fade->FadeToBlack(this, (Module*)app->scene, 60);
+		 CleanUp();
+		app->fade->FadeToBlack((Module*)app->intro, (Module*)app->scene, 60);
 
 	}
 	
@@ -60,6 +62,22 @@ bool SceneIntro::Update(float dt) {	// plays Game logo + animation
 
 bool SceneIntro::PostUpdate() {
 	bool ret = true;
-	app->render->DrawTexture(bgTexture, 0 /*/ 2 - 115*/, 0 /*/ 2 - 115*/); // intro
+
+	if (app->input->GetKey(SDL_SCANCODE_1) == KEY_DOWN)
+		{
+		
+		
+		}
+
+	
 	return ret;
+}
+
+bool SceneIntro::CleanUp()
+{
+	LOG("Cleaning SCENE 1");
+	app->tex->UnLoad(bgTexture);
+	//app->audio->Enable();
+	//app->intro->Disable();
+	return true;
 }

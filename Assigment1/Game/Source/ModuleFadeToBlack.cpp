@@ -9,10 +9,10 @@
 
 #include "SDL/include/SDL_render.h"
 
-ModuleFadeToBlack::ModuleFadeToBlack(/*bool startEnabled*/) : Module(/*startEnabled*/)
+ModuleFadeToBlack::ModuleFadeToBlack(bool startEnabled) : Module(startEnabled)
 	{
 	//int s = app->win->GetScale();
-		//screenRect = {0,0,app->win->screenSurface->w * s ,app->win->screenSurface->h * s};
+		screenRect = {0,0,1200  ,840};
 	}
 ModuleFadeToBlack::~ModuleFadeToBlack()
 {

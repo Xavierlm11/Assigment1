@@ -7,7 +7,7 @@
 struct SDL_Texture;
 class SceneIntro : public Module {
 	public:
-		SceneIntro(/*bool startEnabled*/);
+		SceneIntro(bool startEnabled);
 
 		~SceneIntro();
 
@@ -18,6 +18,8 @@ class SceneIntro : public Module {
 
 		//forms the render call of all the parts of the scene's backgroud
 		bool PostUpdate() override;
+
+		bool CleanUp();
 
 public:
 

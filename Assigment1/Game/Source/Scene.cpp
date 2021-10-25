@@ -7,11 +7,11 @@
 #include "Scene.h"
 #include "Map.h"
 #include "Player.h"
-
+#include"ModuleFadeToBlack.h"
 #include "Defs.h"
 #include "Log.h"
 
-Scene::Scene() : Module()
+Scene::Scene(bool startEnabled) : Module(startEnabled)
 {
 	name.Create("scene");
 }
@@ -87,6 +87,13 @@ bool Scene::Update(float dt)
 				   app->map->mapData.tilesets.count());
 
 	app->win->SetTitle(title.GetString());
+
+	if (app->input->GetKey(SDL_SCANCODE_3) == KEY_DOWN)
+	{
+		CleanUp();
+		app->fade->FadeToBlack((Module*)app->scene, (Module*)app->logo, 60);
+
+	}
 
 	return true;
 }

@@ -12,7 +12,7 @@ struct SDL_Surface;
 
 class Player :public Module {
 public:
-	Player();
+	Player(bool startEnabled);
 
 	// Destructor
 	virtual ~Player();

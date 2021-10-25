@@ -91,7 +91,6 @@ public:
 	Render* render;
 	Textures* tex;
 	Audio* audio;
-	SceneLogo* logo;
 	SceneIntro* intro;
 	Scene* scene;
 	Map* map;

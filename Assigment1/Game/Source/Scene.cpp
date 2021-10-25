@@ -40,7 +40,10 @@ bool Scene::Start()
 	Paral = app->tex->Load("Assets/textures/test.png");
 	
 	// Load music
-	app->audio->PlayMusic("Assets/audio/music/BackgroundMusic.ogg");
+	if (app->player->ActivePlayer == true) {
+		app->audio->PlayMusic("Assets/audio/music/BackgroundMusic.ogg");
+	}
+	
 
 	return true;
 }
@@ -89,13 +92,7 @@ bool Scene::Update(float dt)
 
 	app->win->SetTitle(title.GetString());
 
-	if (app->input->GetKey(SDL_SCANCODE_3) == KEY_DOWN)
-	{
-		CleanUp();
-		app->fade->FadeToBlack((Module*)app->scene, (Module*)app->logo, 60);
-
-	}
-
+	
 	return true;
 }
 

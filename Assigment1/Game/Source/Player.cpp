@@ -4,6 +4,7 @@
 #include "Input.h"
 #include "Player.h"
 #include "Animation.h"
+#include "Audio.h"
 #include <stdio.h>
 #include <stdlib.h>
 
@@ -97,6 +98,8 @@ bool Player::Start()
 	app->player->position.y = 20;
 	PlayerPosition = true;
 
+
+
 	return ret;
 }
 
@@ -180,7 +183,10 @@ bool Player::PostUpdate()
 {
 	bool ret = true;
 	SDL_Rect rect = currentAnimation->GetCurrentFrame();
-	app->render->DrawTexture(texture, position.x - 10, position.y + 20, &rect);//draw player
+	if (ActivePlayer == true) {
+		
+		app->render->DrawTexture(texture, position.x - 10, position.y + 20, &rect);//draw player
+	}
 
 	return ret;
 }

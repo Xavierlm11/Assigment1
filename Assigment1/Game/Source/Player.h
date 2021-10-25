@@ -46,6 +46,8 @@ public:
 
 	iPoint position;
 
+	bool ActivePlayer = false;
+
 public:
 	List<SDL_Texture*> player;
 

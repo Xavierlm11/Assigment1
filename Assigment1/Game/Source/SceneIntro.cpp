@@ -60,7 +60,7 @@ bool SceneIntro::Start() {
 
 bool SceneIntro::Update(float dt) {	// plays Game logo + animation
 	bool ret = true;
-	/*intro.Update();*/
+	intro.Update();
 
 	/*if (intro.HasFinished())
 	{
@@ -69,10 +69,11 @@ bool SceneIntro::Update(float dt) {	// plays Game logo + animation
 	
 
 
-	 if (app->input->GetKey(SDL_SCANCODE_2) == KEY_DOWN)
+	 if (app->input->GetKey(SDL_SCANCODE_P) == KEY_DOWN)
 	 {
 		 /*CleanUp();*/
 		app->fade->FadeToBlack((Module*)app->intro, (Module*)app->scene, 90);
+		
 	 }
 	
 	return ret;
@@ -93,6 +94,10 @@ bool SceneIntro::CleanUp()
 {
 	LOG("Cleaning SCENE 1");
 	app->tex->UnLoad(bgTexture);
+	app->player->ActivePlayer = true;
+	app->player->position.x = 50;
+	app->player->position.y = 20;
+
 	//app->audio->Enable();
 	//app->intro->Disable();
 	return true;

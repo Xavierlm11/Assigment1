@@ -15,7 +15,7 @@
 #include "SDL_image/include/SDL_image.h"
 //#pragma comment(lib, "../Game/Source/External/SDL_image/libx86/SDL2_image.lib")
 
-Player::Player() : Module()
+Player::Player(bool startEnabled) : Module(startEnabled)
 {
 	name.Create("player");
 
@@ -213,10 +213,10 @@ bool Player::LoadState(pugi::xml_node& data)
 // Save Game State
 bool Player::SaveState(pugi::xml_node& data) const
 {
-	pugi::xml_node pos = data.append_child("position");
+	pugi::xml_node pla = data.child("position");
 
-	pos.append_attribute("x") = position.x;
-	pos.append_attribute("y") = position.y;
+	pla.attribute("x").set_value(position.x);
+	pla.attribute("y").set_value(position.y);
 
 	return true;
 }

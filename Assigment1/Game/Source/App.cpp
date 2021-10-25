@@ -5,6 +5,8 @@
 #include "Textures.h"
 #include "Audio.h"
 #include "Scene.h"
+#include "SceneLogo.h"
+#include "SceneIntro.h"
 #include "Map.h"
 #include "Player.h"
 #include "Animation.h"
@@ -22,28 +24,31 @@ App::App(int argc, char* args[]) : argc(argc), args(args)
 {
 	frames = 0;
 
-	win = new Window();
-	input = new Input();
-	render = new Render();
-	tex = new Textures();
-	audio = new Audio();
-	scene = new Scene();
-	map = new Map();
-	player = new Player();
-	fade = new ModuleFadeToBlack();
-	intro = new SceneIntro();
+	win = new Window(true);
+	input = new Input(true);
+	tex = new Textures(true);
+	audio = new Audio(true);
+	logo = new SceneLogo(true);
+	intro = new SceneIntro(false);
+	scene = new Scene(false);
+	map = new Map(false);
+	player = new Player(false);
+	fade = new ModuleFadeToBlack(true);
+	
+	render = new Render(true);
 	// Ordered for awake / Start / Update
 	// Reverse order of CleanUp
 	AddModule(win);
 	AddModule(input);
 	AddModule(tex);
 	AddModule(audio);
+	AddModule(logo);
 	AddModule(intro);
 	AddModule(scene);
 	AddModule(map);
 	AddModule(player);
 	AddModule(fade);
-	
+
 	// Render last to swap buffer
 	AddModule(render);
 }
@@ -333,28 +338,26 @@ bool App::LoadGame()
 bool App::SaveGame() const
 {
 	bool ret = true;
-	/*pugi::xml_document gameStateFile;
-	pugi::xml_parse_result result = gameStateFile.save_file("save_game.xml");
+	pugi::xml_document gameStateFile;
+	pugi::xml_parse_result result = gameStateFile.load_file("save_game.xml");
 
 	if (result == NULL)
 	{
 		LOG("could not Load xml file savegame.xml. pugi error: %s", result.description());
 		ret = false;
 	}
-	else {
-		ListItem<Module*>* item;
-		item = modules.end;
-		while (item != NULL && ret == true)
-		{
-			item->data->SaveState(gameStateFile.child("game_state").child(item->data->name.GetString()));
-			item = item->next;
-			LOG("could Load xml file savegame.xml. pugi error: bbbbbbbbbbbbbbbbbbbbbbbA");
-			saveGameRequested = false;
-		}
-
-	}*/
-
 	
+	ListItem<Module*>* item;
+	item = modules.end;
+	while (item != NULL && ret == true)
+	{
+		item->data->SaveState(gameStateFile.child("game_state").child(item->data->name.GetString()));
+		item = item->next;
+		LOG("could Load xml file savegame.xml. pugi error");
+		
+	}
+	saveGameRequested = false;
+	gameStateFile.save_file("save_game.xml");
 
 	return ret;
 }

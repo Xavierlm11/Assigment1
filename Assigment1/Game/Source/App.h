@@ -15,11 +15,13 @@ class Input;
 class Render;
 class Textures;
 class Audio;
+class SceneLogo;
+class SceneIntro;
 class Scene;
 class Map;
 class Player;
 class ModuleFadeToBlack;
-class SceneIntro;
+
 
 class App
 {
@@ -89,11 +91,13 @@ public:
 	Render* render;
 	Textures* tex;
 	Audio* audio;
+	SceneLogo* logo;
+	SceneIntro* intro;
 	Scene* scene;
 	Map* map;
 	Player* player;
 	ModuleFadeToBlack* fade;
-	SceneIntro* intro;
+	
 
 private:
 

@@ -1,4 +1,5 @@
-﻿  SceneIntro.cpp
-D:\y\UNIS\2o\1sem\desarrollo\Assigment1\Assigment1\Game\Source\Animation.h(54,19): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
-D:\y\UNIS\2o\1sem\desarrollo\Assigment1\Assigment1\Game\Source\Animation.h(56,30): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
-  Game.vcxproj -> D:\y\UNIS\2o\1sem\desarrollo\Assigment1\Assigment1\Build\Debug\Game.exe
+﻿  App.cpp
+C:\Users\marinaav\Documents\GitHub\Assigment1\assigment1\Game\Source\Animation.h(54,19): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+C:\Users\marinaav\Documents\GitHub\Assigment1\assigment1\Game\Source\Animation.h(56,30): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
+C:\Users\marinaav\Documents\GitHub\Assigment1\assigment1\Game\Source\App.cpp(181,21): warning C4553: '==': result of expression not used; did you intend '='?
+  Game.vcxproj -> C:\Users\marinaav\Documents\GitHub\Assigment1\assigment1\Build\Debug\Game.exe

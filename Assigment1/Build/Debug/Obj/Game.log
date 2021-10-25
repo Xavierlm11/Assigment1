@@ -1,26 +1,5 @@
-﻿  Main.cpp
-  App.cpp
-C:\Users\marin\Documents\GitHub\Assigment1\Assigment1\Game\Source\Animation.h(54,19): warning C4244: 'inicializando': conversión de 'float' a 'int'; posible pérdida de datos
-C:\Users\marin\Documents\GitHub\Assigment1\Assigment1\Game\Source\Animation.h(56,30): warning C4244: '=': conversión de 'float' a 'int'; posible pérdida de datos
-C:\Users\marin\Documents\GitHub\Assigment1\Assigment1\Game\Source\App.cpp(178,21): warning C4553: "==": el resultado de la expresión no se usa. ¿Quiso decir "="?
-  Audio.cpp
-  Input.cpp
-  Map.cpp
-  ModuleFadeToBlack.cpp
-C:\Users\marin\Documents\GitHub\Assigment1\Assigment1\Game\Source\ModuleFadeToBlack.cpp(82,19): warning C4244: '=': conversión de 'float' a 'Uint32'; posible pérdida de datos
-  Player.cpp
-C:\Users\marin\Documents\GitHub\Assigment1\Assigment1\Game\Source\Animation.h(54,19): warning C4244: 'inicializando': conversión de 'float' a 'int'; posible pérdida de datos
-C:\Users\marin\Documents\GitHub\Assigment1\Assigment1\Game\Source\Animation.h(56,30): warning C4244: '=': conversión de 'float' a 'int'; posible pérdida de datos
-  Scene.cpp
-C:\Users\marin\Documents\GitHub\Assigment1\Assigment1\Game\Source\Animation.h(54,19): warning C4244: 'inicializando': conversión de 'float' a 'int'; posible pérdida de datos
-C:\Users\marin\Documents\GitHub\Assigment1\Assigment1\Game\Source\Animation.h(56,30): warning C4244: '=': conversión de 'float' a 'int'; posible pérdida de datos
-  Render.cpp
-  SceneIntro.cpp
-C:\Users\marin\Documents\GitHub\Assigment1\Assigment1\Game\Source\Animation.h(54,19): warning C4244: 'inicializando': conversión de 'float' a 'int'; posible pérdida de datos
-C:\Users\marin\Documents\GitHub\Assigment1\Assigment1\Game\Source\Animation.h(56,30): warning C4244: '=': conversión de 'float' a 'int'; posible pérdida de datos
-  Textures.cpp
-  Window.cpp
-  Log.cpp
-  pugixml.cpp
-  Generando código...
-  Game.vcxproj -> C:\Users\marin\Documents\GitHub\Assigment1\Assigment1\Build\Debug\Game.exe
+﻿  App.cpp
+C:\Users\marinaav\Documents\GitHub\Assigment1\assigment1\Game\Source\Animation.h(54,19): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+C:\Users\marinaav\Documents\GitHub\Assigment1\assigment1\Game\Source\Animation.h(56,30): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
+C:\Users\marinaav\Documents\GitHub\Assigment1\assigment1\Game\Source\App.cpp(181,21): warning C4553: '==': result of expression not used; did you intend '='?
+  Game.vcxproj -> C:\Users\marinaav\Documents\GitHub\Assigment1\assigment1\Build\Debug\Game.exe

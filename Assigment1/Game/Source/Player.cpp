@@ -39,10 +39,10 @@ Player::Player(bool startEnabled) : Module(startEnabled)
 	idleAnimL.speed = 0.069f;
 
 	walkAnimR.PushBack({ 254,11,20,18 });
-	walkAnimR.PushBack({ 276,10,20,18 });
+	walkAnimR.PushBack({ 276,10,22,19 });
 	walkAnimR.PushBack({ 299,11,20,18 });
 	walkAnimR.PushBack({ 321,11,20,18 });
-	walkAnimR.PushBack({ 342,11,20,18 });
+	walkAnimR.PushBack({ 342,11,18,18 });
 	walkAnimR.PushBack({ 361,11,20,18 });
 	walkAnimR.loop = true;
 	walkAnimR.speed = 0.1f;
@@ -50,9 +50,9 @@ Player::Player(bool startEnabled) : Module(startEnabled)
 	walkAnimL.PushBack({ 971,313,20,18 });
 	walkAnimL.PushBack({ 948,312,21,19 });
 	walkAnimL.PushBack({ 926,313,20,18 });
-	walkAnimL.PushBack({ 905,315,20,18 });
-	walkAnimL.PushBack({ 886,314,20,18 });
-	walkAnimL.PushBack({ 867,313,20,18 });
+	walkAnimL.PushBack({ 905,315,19,18 });
+	walkAnimL.PushBack({ 886,314,19,18 });
+	walkAnimL.PushBack({ 867,313,19,18 });
 	walkAnimL.loop = true;
 	walkAnimL.speed = 0.1f;
 

@@ -37,7 +37,7 @@ bool Scene::Start()
 	//app->map->Load("hello.tmx");
 	app->map->Load("level1.tmx");
 
-	Paral = app->tex->Load("Assets/textures/test.png");
+	Paral = app->tex->Load("Assets/textures/Fondo.png");
 	
 	// Load music
 	if (app->player->ActivePlayer == true) {

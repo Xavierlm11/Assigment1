@@ -35,6 +35,10 @@ public:
 private:
 	SDL_Texture* img;
 	SDL_Texture* Paral;
+	SDL_Texture* bgpa;
+	SDL_Texture* bgpa1;
+	float scrollerX = 0;
+	float scrollerX1 = 1600;
 };
 
 #endif // __SCENE_H__

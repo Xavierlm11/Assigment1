@@ -37,8 +37,9 @@ bool Scene::Start()
 	//app->map->Load("hello.tmx");
 	app->map->Load("level1.tmx");
 
-	Paral = app->tex->Load("Assets/textures/Fondo.png");
-	
+	//Paral = app->tex->Load("Assets/textures/Fondo.png");
+	bgpa = app->tex->Load("Assets/textures/backgroundParallax.png");
+	bgpa1 = app->tex->Load("Assets/textures/backgroundParallax.png");
 	// Load music
 	if (app->player->ActivePlayer == true) {
 		app->audio->PlayMusic("Assets/audio/music/BackgroundMusic.ogg");
@@ -57,7 +58,18 @@ bool Scene::PreUpdate()
 // Called each loop iteration
 bool Scene::Update(float dt)
 {
-	app->render->DrawTexture(Paral, 0, 0);
+	scrollerX -= 0.2069;
+	scrollerX1 -= 0.2069;
+	if (scrollerX < -1550) {
+		scrollerX = 1600;
+	}
+	if (scrollerX1 < -1550) {
+		scrollerX1 = 1600;
+	}
+	//app->render->DrawTexture(Paral, 0, 0);
+	app->render->DrawTexture(bgpa, scrollerX, 0, NULL);
+
+	app->render->DrawTexture(bgpa1, scrollerX1, 0, NULL);
 
 	int speed = 8;
     // L02: DONE 3: Request Load / Save when pressing L/S

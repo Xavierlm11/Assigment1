@@ -16,7 +16,10 @@
 
 SceneIntro::SceneIntro(/*bool startEnabled*/) :Module(/*startEnabled*/)
 {
-
+	PressEnter.PushBack({ 0,0,85,26 });
+	PressEnter.PushBack({ 0,0,1,1 });
+	PressEnter.loop = true;
+	PressEnter.speed = 0.1f;
 
 }
 
@@ -30,6 +33,7 @@ bool SceneIntro::Start() {
 	bool ret = true;
     
 	bgTexture = app->tex->Load("Assets/textures/Menu.png");
+	PressEnterTex = app->tex->Load("Assets/textures/PressEnter.png");
 
 	//app->audio->PlayMusic("assets/sound/music/intro.ogg", 1.0f);
 
@@ -41,6 +45,7 @@ bool SceneIntro::Start() {
 
 bool SceneIntro::Update(float dt) {	// plays Game logo + animation
 	bool ret = true;
+	PressEnter.Update();
 	intro.Update();
 	/*if (intro.HasFinished())
 	{
@@ -48,18 +53,19 @@ bool SceneIntro::Update(float dt) {	// plays Game logo + animation
 	}*/
 
 	 if ((app->input->GetKey(SDL_SCANCODE_P) == KEY_REPEAT))
-	{
+	 {
 		app->fade->FadeToBlack(this, (Module*)app->scene, 60);
 
-	}
+	 }
 	
 	return ret;
 }
 
-//DRAW BACKGROUD
+//DRAW BACKGROUND
 
 bool SceneIntro::PostUpdate() {
 	bool ret = true;
 	app->render->DrawTexture(bgTexture, 0 /*/ 2 - 115*/, 0 /*/ 2 - 115*/); // intro
+	app->render->DrawTexture(PressEnterTex, 80 , 140, NULL);
 	return ret;
 }

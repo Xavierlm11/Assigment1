@@ -24,9 +24,11 @@ public:
 	//sprite loaded into an SDL_Texture
 	SDL_Texture* bgTexture = nullptr;
 	SDL_Texture* bgTexture1 = nullptr;
+	SDL_Texture* PressEnterTex = nullptr;
 	//The intro animation 
 	Animation intro;
 	Animation logo;
+	Animation PressEnter;
 };
 
 #endif

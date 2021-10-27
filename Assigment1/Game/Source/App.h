@@ -21,7 +21,7 @@ class Scene;
 class Map;
 class Player;
 class ModuleFadeToBlack;
-
+class ModuleCollisions;
 
 class App
 {
@@ -96,7 +96,7 @@ public:
 	Map* map;
 	Player* player;
 	ModuleFadeToBlack* fade;
-	
+	ModuleCollisions* coll;
 
 private:
 

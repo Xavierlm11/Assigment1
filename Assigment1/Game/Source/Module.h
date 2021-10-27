@@ -89,6 +89,9 @@ public:
 		}
 	}
 
+	virtual void OnCollision(Collider* c1, Collider* c2)
+	{}
+
 	inline bool IsEnabled() const { return  isEnabled; }
 
 public:

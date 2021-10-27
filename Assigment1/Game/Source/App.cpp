@@ -11,6 +11,8 @@
 #include "Animation.h"
 #include "ModuleFadeToBlack.h"
 #include "SceneIntro.h"
+#include "ModuleCollisions.h"
+
 
 #include "Defs.h"
 #include "Log.h"
@@ -32,7 +34,8 @@ App::App(int argc, char* args[]) : argc(argc), args(args)
 	map = new Map(false);
 	player = new Player(false);
 	fade = new ModuleFadeToBlack(true);
-	
+	coll = new ModuleCollisions(true);
+
 	render = new Render(true);
 	// Ordered for awake / Start / Update
 	// Reverse order of CleanUp
@@ -45,6 +48,7 @@ App::App(int argc, char* args[]) : argc(argc), args(args)
 	AddModule(map);
 	AddModule(player);
 	AddModule(fade);
+	AddModule(coll);
 
 	// Render last to swap buffer
 	AddModule(render);

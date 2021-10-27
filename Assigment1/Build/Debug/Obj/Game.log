@@ -1,5 +1,45 @@
-﻿  App.cpp
-C:\Users\marinaav\Documents\GitHub\Assigment1\assigment1\Game\Source\Animation.h(54,19): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
-C:\Users\marinaav\Documents\GitHub\Assigment1\assigment1\Game\Source\Animation.h(56,30): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
-C:\Users\marinaav\Documents\GitHub\Assigment1\assigment1\Game\Source\App.cpp(181,21): warning C4553: '==': result of expression not used; did you intend '='?
-  Game.vcxproj -> C:\Users\marinaav\Documents\GitHub\Assigment1\assigment1\Build\Debug\Game.exe
+﻿  Main.cpp
+C:\Users\Xavierlm9\Desktop\Assigment1\Assigment1\Game\Source\Module.h(92,27): error C2061: syntax error: identifier 'Collider'
+  App.cpp
+C:\Users\Xavierlm9\Desktop\Assigment1\Assigment1\Game\Source\Module.h(92,27): error C2061: syntax error: identifier 'Collider'
+C:\Users\Xavierlm9\Desktop\Assigment1\Assigment1\Game\Source\Animation.h(54,19): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+C:\Users\Xavierlm9\Desktop\Assigment1\Assigment1\Game\Source\Animation.h(56,30): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
+C:\Users\Xavierlm9\Desktop\Assigment1\Assigment1\Game\Source\App.cpp(182,21): warning C4553: '==': result of expression not used; did you intend '='?
+  Audio.cpp
+C:\Users\Xavierlm9\Desktop\Assigment1\Assigment1\Game\Source\Module.h(92,27): error C2061: syntax error: identifier 'Collider'
+  Input.cpp
+C:\Users\Xavierlm9\Desktop\Assigment1\Assigment1\Game\Source\Module.h(92,27): error C2061: syntax error: identifier 'Collider'
+  Map.cpp
+C:\Users\Xavierlm9\Desktop\Assigment1\Assigment1\Game\Source\Module.h(92,27): error C2061: syntax error: identifier 'Collider'
+  ModuleCollisions.cpp
+C:\Users\Xavierlm9\Desktop\Assigment1\Assigment1\Game\Source\Module.h(92,27): error C2061: syntax error: identifier 'Collider'
+C:\Users\Xavierlm9\Desktop\Assigment1\Assigment1\Game\Source\ModuleCollisions.cpp(132,38): error C2660: 'Module::OnCollision': function does not take 2 arguments
+C:\Users\Xavierlm9\Desktop\Assigment1\Assigment1\Game\Source\Module.h(92,15): message : see declaration of 'Module::OnCollision'
+C:\Users\Xavierlm9\Desktop\Assigment1\Assigment1\Game\Source\ModuleCollisions.cpp(135,38): error C2660: 'Module::OnCollision': function does not take 2 arguments
+C:\Users\Xavierlm9\Desktop\Assigment1\Assigment1\Game\Source\Module.h(92,15): message : see declaration of 'Module::OnCollision'
+  ModuleFadeToBlack.cpp
+C:\Users\Xavierlm9\Desktop\Assigment1\Assigment1\Game\Source\Module.h(92,27): error C2061: syntax error: identifier 'Collider'
+C:\Users\Xavierlm9\Desktop\Assigment1\Assigment1\Game\Source\ModuleFadeToBlack.cpp(82,19): warning C4244: '=': conversion from 'float' to 'Uint32', possible loss of data
+  Player.cpp
+C:\Users\Xavierlm9\Desktop\Assigment1\Assigment1\Game\Source\Module.h(92,27): error C2061: syntax error: identifier 'Collider'
+C:\Users\Xavierlm9\Desktop\Assigment1\Assigment1\Game\Source\Animation.h(54,19): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+C:\Users\Xavierlm9\Desktop\Assigment1\Assigment1\Game\Source\Animation.h(56,30): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
+  Scene.cpp
+C:\Users\Xavierlm9\Desktop\Assigment1\Assigment1\Game\Source\Module.h(92,27): error C2061: syntax error: identifier 'Collider'
+C:\Users\Xavierlm9\Desktop\Assigment1\Assigment1\Game\Source\Animation.h(54,19): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+C:\Users\Xavierlm9\Desktop\Assigment1\Assigment1\Game\Source\Animation.h(56,30): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
+C:\Users\Xavierlm9\Desktop\Assigment1\Assigment1\Game\Source\Scene.cpp(61,21): warning C4305: '-=': truncation from 'double' to 'float'
+C:\Users\Xavierlm9\Desktop\Assigment1\Assigment1\Game\Source\Scene.cpp(62,22): warning C4305: '-=': truncation from 'double' to 'float'
+C:\Users\Xavierlm9\Desktop\Assigment1\Assigment1\Game\Source\Scene.cpp(70,33): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\Xavierlm9\Desktop\Assigment1\Assigment1\Game\Source\Scene.cpp(72,34): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+  Render.cpp
+C:\Users\Xavierlm9\Desktop\Assigment1\Assigment1\Game\Source\Module.h(92,27): error C2061: syntax error: identifier 'Collider'
+  SceneIntro.cpp
+C:\Users\Xavierlm9\Desktop\Assigment1\Assigment1\Game\Source\Module.h(92,27): error C2061: syntax error: identifier 'Collider'
+C:\Users\Xavierlm9\Desktop\Assigment1\Assigment1\Game\Source\Animation.h(54,19): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+C:\Users\Xavierlm9\Desktop\Assigment1\Assigment1\Game\Source\Animation.h(56,30): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
+  Textures.cpp
+C:\Users\Xavierlm9\Desktop\Assigment1\Assigment1\Game\Source\Module.h(92,27): error C2061: syntax error: identifier 'Collider'
+  Window.cpp
+C:\Users\Xavierlm9\Desktop\Assigment1\Assigment1\Game\Source\Module.h(92,27): error C2061: syntax error: identifier 'Collider'
+  Generating Code...

@@ -57,29 +57,32 @@ void Map::Draw()
 
 	while (mapLayerItem != NULL) {
 
-		for (int x = 0; x < mapLayerItem->data->width; x++)
+		if (mapLayerItem->data->properties.GetProperty("Draw") == 1) 
 		{
-			for (int y = 0; y < mapLayerItem->data->height; y++)
+			for (int x = 0; x < mapLayerItem->data->width; x++)
 			{
-				// L04: DONE 9: Complete the draw function
-				int gid = mapLayerItem->data->Get(x, y);
+				for (int y = 0; y < mapLayerItem->data->height; y++)
+				{
+					// L04: DONE 9: Complete the draw function
+					int gid = mapLayerItem->data->Get(x, y);
 
-				if (gid > 0) {
+					if (gid > 0) {
 
-					//L06: TODO 4: Obtain the tile set using GetTilesetFromTileId
-					//now we always use the firt tileset in the list
-					//TileSet* tileset = mapData.tilesets.start->data;
-					TileSet* tileset = GetTilesetFromTileId(gid);
+						//L06: TODO 4: Obtain the tile set using GetTilesetFromTileId
+						//now we always use the firt tileset in the list
+						//TileSet* tileset = mapData.tilesets.start->data;
+						TileSet* tileset = GetTilesetFromTileId(gid);
 
-					SDL_Rect r = tileset->GetTileRect(gid);
-					iPoint pos = MapToWorld(x, y);
+						SDL_Rect r = tileset->GetTileRect(gid);
+						iPoint pos = MapToWorld(x, y);
 
-					app->render->DrawTexture(tileset->texture,
-						pos.x,
-						pos.y,
-						&r);
+						app->render->DrawTexture(tileset->texture,
+							pos.x,
+							pos.y,
+							&r);
+					}
+
 				}
-
 			}
 		}
 
@@ -119,6 +122,7 @@ TileSet* Map::GetTilesetFromTileId(int id) const
 {
 	ListItem<TileSet*>* item = mapData.tilesets.start;
 	TileSet* set = item->data;
+
 
 	//..
 

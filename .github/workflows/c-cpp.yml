@@ -5,14 +5,26 @@ on:
     branches: [ main ]
   pull_request:
     branches: [ main ]
+  
 
 jobs:
   build:
 
     runs-on: ubuntu-latest
-
     steps:
-    - name: Zip Folder
-      run: zip -r release.zip .
-    - name: Release to Github
-      run: echo "Release"
+    - uses: actions/checkout@master
+    - name: Zip Release
+      uses: TheDoctor0/zip-release@0.6.2
+      with:
+          filename: 'release.zip'
+          exclusions: '*.gitignore*'
+    - name: Create Release
+      uses: ncipollo/release-action@v1.10.0
+      with: 
+        tag: $
+        artifacts: "release.zip"
+        token: $
+          
+
+
+

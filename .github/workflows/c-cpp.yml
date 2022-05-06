@@ -21,9 +21,9 @@ jobs:
     - name: Create Release
       uses: ncipollo/release-action@v1.10.0
       with: 
-        tag: $
+        token: ${{ secrets.GITHUB_TOKEN }}
         artifacts: "release.zip"
-        token: $
+        tag: uwu
           
 
 

@@ -10,21 +10,20 @@ on:
 jobs:
   build:
 
-    runs-on: ubuntu-latest
+    runs-on: windows-latest
     steps:
-    - uses: actions/checkout@master
-    - name: Zip Release
-      uses: TheDoctor0/zip-release@0.6.2
+    - name: Checkout
+      uses: actions/checkout@v2.0.0
+    - name: Build project
+      uses: nicledomaS/cmake_build_action@v1.2
       with:
-          filename: 'release.zip'
-          exclusions: '*.gitignore*'
-    - name: Create Release
-      uses: ncipollo/release-action@v1.10.0
-      with: 
-        token: ${{ secrets.TOKEN }}
-        artifacts: "release.zip"
-        tag: uwu
-          
-
-
-
+        config: ${{ matrix.configs }}
+        submodule_update: ON
+        run_tests: ON
+        unit_test_build: -DFIND_TESTS=ON
+        cmake_args: -DFIND_MODULES=ON;-DENABLE_TIDY=ON
+        create_package: ON
+    - uses: actions/upload-artifact@v2
+      with:
+        path: build/*.tar.gz
+        name: artifact ${{ matrix.os }}_${{ matrix.configs }}

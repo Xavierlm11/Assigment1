@@ -29,3 +29,14 @@ jobs:
         mkdir $
         cd ../../Assigment1
         dir
+        
+    - name: Generate Artifacts
+      run: |
+        robocopy .\Output .\build\$\Output /S
+        robocopy .\build\$ .\build\$\Output Game.exe /MOVE
+        copy /Y .\README.md .\build\$\README.md
+        copy /Y .\LICENSE .\build\$\LICENSE
+        cd build
+        7z a ./$.zip 
+        dir
+      shell: cmd    

@@ -13,17 +13,19 @@ jobs:
     runs-on: windows-latest
     steps:
     - name: Checkout
-      uses: actions/checkout@v2.0.0
-    - name: Build project
-      uses: nicledomaS/cmake_build_action@v1.2
-      with:
-        config: ${{ matrix.configs }}
-        submodule_update: ON
-        run_tests: ON
-        unit_test_build: -DFIND_TESTS=ON
-        cmake_args: -DFIND_MODULES=ON;-DENABLE_TIDY=ON
-        create_package: ON
-    - uses: actions/upload-artifact@v2
-      with:
-        path: build/*.tar.gz
-        name: artifact ${{ matrix.os }}_${{ matrix.configs }}
+      uses: actions/checkout@master
+    
+    - name: Setup Release Version
+      run: |
+        echo "RELEASE_NAME=PUT_YOUR_RELEASE_NAME_HERE_$" >> $GITHUB_ENV
+      shell: bash
+      if: github.event_name == 'release' && github.event.action == 'published'
+
+    - name: Setup Environment
+      run: | 
+        dir
+        mkdir build
+        cd build
+        mkdir $
+        cd ../../Assigment1
+        dir
